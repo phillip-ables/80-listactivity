@@ -3,8 +3,11 @@ package com.example.techtron.listactivity;
 import android.app.ListActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends ListActivity {
     //define a data source
@@ -26,9 +29,15 @@ public class MainActivity extends ListActivity {
         //tell the listview who its adapter is
         l.setAdapter(adapter);
         //were almost done, the user can see the list but when he clicks nothing is going to happen
-        //we dont have to implement listeners here 
+        //we dont have to implement listeners here
     }
+    //onListItemClick bam done
+    //same parameters as yout listView item had
+    @Override
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+        super.onListItemClick(l, v, position, id);
+        TextView temp = (TextView) v;
+        Toast.makeText(this,""+temp.getText()+" "+position, Toast.LENGTH_SHORT).show();
 
-
-
+    }
 }
