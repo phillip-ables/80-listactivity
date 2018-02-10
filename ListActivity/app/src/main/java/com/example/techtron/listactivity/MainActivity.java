@@ -3,6 +3,7 @@ package com.example.techtron.listactivity;
 import android.app.ListActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class MainActivity extends ListActivity {
@@ -19,7 +20,10 @@ public class MainActivity extends ListActivity {
         //now we dont have to say find id by blah blah blah
         l = getListView();
         //adapter data source
-        
+        //does nothing but takes the data from the array and creates a simple view of that data,
+        //first context, second how a row should look, third part is the array itself
+        ArrayAdapter<String> adapter = new ArrayAdapter<String> (this, android.R.layout.simple_list_item_1, days);
+        //tell the listview who its adapter is
     }
 
 
