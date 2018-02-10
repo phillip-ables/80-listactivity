@@ -24,6 +24,9 @@ public class MainActivity extends ListActivity {
         //first context, second how a row should look, third part is the array itself
         ArrayAdapter<String> adapter = new ArrayAdapter<String> (this, android.R.layout.simple_list_item_1, days);
         //tell the listview who its adapter is
+        l.setAdapter(adapter);
+        //were almost done, the user can see the list but when he clicks nothing is going to happen
+        //we dont have to implement listeners here 
     }
 
 
